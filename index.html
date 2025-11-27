@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeUp - Dicas para Vida Inteligente</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">Life<span>Up</span></div>
+        
+        <!-- Barra de Busca -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Buscar dicas...">
+            <button class="search-btn">🔍</button>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="#home">Início</a></li>
+            <li><a href="#investimentos">Investimentos</a></li>
+            <li><a href="#treino">Treino</a></li>
+            <li><a href="#alimentacao">Alimentação</a></li>
+            <li><a href="#moda">Moda</a></li>
+            <li><a href="#favoritos">⭐ Favoritos</a></li>
+        </ul>
+        
+        <!-- Toggle Tema -->
+        <button class="theme-toggle" id="themeToggle">🌙</button>
+        <div class="menu-toggle">☰</div>
+    </nav>
+
+    <!-- HERO -->
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>Transforme Sua Vida</h1>
+            <p>Dicas inteligentes de investimento, treino, alimentação e moda</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" data-target="150">0</span>+
+                    <span class="stat-label">Dicas</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="50">0</span>K+
+                    <span class="stat-label">Usuários</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="4">0</span>
+                    <span class="stat-label">Categorias</span>
+                </div>
+            </div>
+            <a href="#investimentos" class="btn-primary">Explorar Dicas</a>
+        </div>
+        <div class="scroll-indicator">
+            <span>↓</span>
+        </div>
+    </header>
+
+    <!-- FILTROS -->
+    <section class="filters-section">
+        <div class="filters-container">
+            <button class="filter-btn active" data-filter="all">Todas</button>
+            <button class="filter-btn" data-filter="investimentos">💰 Investimentos</button>
+            <button class="filter-btn" data-filter="treino">💪 Treino</button>
+            <button class="filter-btn" data-filter="alimentacao">🥗 Alimentação</button>
+            <button class="filter-btn" data-filter="moda">👔 Moda</button>
+            <button class="filter-btn" data-filter="favoritos">⭐ Favoritos</button>
+        </div>
+    </section>
+
+    <!-- SEÇÃO INVESTIMENTOS -->
+    <section id="investimentos" class="section" data-category="investimentos">
+        <div class="section-header">
+            <span class="icon">💰</span>
+            <h2>Investimentos</h2>
+            <p>Faça seu dinheiro trabalhar por você</p>
+            <a href="investimentos.html" class="btn-secondary">Ver Todas →</a>
+        </div>
+        <div class="cards-container">
+            <div class="card" data-category="investimentos" data-id="inv1">
+                <button class="favorite-btn" data-id="inv1">♡</button>
+                <div class="card-badge">Popular</div>
+                <div class="card-icon">📈</div>
+                <h3>Renda Variável</h3>
+                <p>Aprenda a investir em ações, FIIs e ETFs com estratégias comprovadas.</p>
+                <div class="card-meta">
+                    <span class="difficulty easy">Iniciante</span>
+                    <span class="read-time">5 min</span>
+                </div>
+                <div class="card-rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-count">(128)</span>
+                </div>
+                <button class="card-btn" onclick="openModal('inv1')">Ler Dica</button>
+            </div>
+            
+            <div class="card" data-category="investimentos" data-id="inv2">
+                <button class="favorite-btn" data-id="inv2">♡</button>
+                <div class="card-icon">🏦</div>
+                <h3>Renda Fixa</h3>
+                <p>CDBs, Tesouro Direto e LCIs explicados de forma simples.</p>
+                <div class="card-meta">
+                    <span class="difficulty easy">Iniciante</span>
+                    <span class="read-time">4 min</span>
+                </div>
+                <div class="card-rating">
+                    <span class="stars">★★★★☆</span>
+                    <span class="rating-count">(95)</span>
+                </div>
+                <button class="card-btn" onclick="openModal('inv2')">Ler Dica</button>
+            </div>
+            
+            <div class="card" data-category="investimentos" data-id="inv3">
+                <button class="favorite-btn" data-id="inv3">♡</button>
+                <div class="card-badge new">Novo</div>
+                <div class="card-icon">🎯</div>
+                <h3>Reserva de Emergência</h3>
+                <p>Como montar sua reserva e onde investir com segurança.</p>
+                <div class="card-meta">
+                    <span class="difficulty easy">Iniciante</span>
+                    <span class="read-time">3 min</span>
+                </div>
+                <div class="card-rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-count">(210)</span>
+                </div>
+                <button class="card-btn" onclick="openModal('inv3')">Ler Dica</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO TREINO -->
+    <section id="treino" class="section section-alt" data-category="treino">
+        <div class="section-header">
+            <span class="icon">💪</span>
+            <h2>Treino</h2>
+            <p>Corpo forte, mente saudável</p>
+            <a href="treino.html" class="btn-secondary">Ver Todas →</a>
+        </div>
+        <div class="cards-container">
+            <div class="card" data-category="treino" data-id="tre1">
+                <button class="favorite-btn" data-id="tre1">♡</button>
+                <div class="card-badge">Popular</div>
+                <div class="card-icon">🏋️</div>
+                <h3>Treino Push Pull Legs</h3>
+                <p>Divisão de treino eficiente para ganho de massa muscular.</p>
+                <div class="card-meta">
+                    <span class="difficulty medium">Intermediário</span>
+                    <span class="read-time">8 min</span>
+                </div>
+                <div class="card-rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-count">(187)</span>
+                </div>
+                <button class="card-btn" onclick="openModal('tre1')">Ler Dica</button>
+            </div>
+            
+            <div class="card" data-category="treino" data-id="tre2">
+                <button class="favorite-btn" data-id="tre2">♡</button>
+                <div class="card-icon">🏃</div>
+                <h3>HIIT em 20 Minutos</h3>
+                <p>Treino intenso para queimar gordura rapidamente.</p>
+                <div class="card-meta">
+                    <span class="difficulty hard">Avançado</span>
+                    <span class="read-time">6 min</span>
+                </div>
+                <div class="card-rating">
+                    <span class="stars">★★★★☆</span>
+                    <span class="rating-count">(142)</span>
+                </div>
+                <button class="card-btn" onclick="openModal('tre2')">Ler Dica</button>
+            </div>
+            
+            <div class="card" data-category="treino" data-id="tre3">
+                <button class="favorite-btn" data-id="tre3">♡</button>
+                <div class="card-icon">🧘</div>
+                <h3>Mobilidade Matinal</h3>
+                <p>15 minutos de alongamento para começar bem o dia.</p>
+                <div class="card-meta">
+                    <span class="difficulty easy">Iniciante</span>
+                    <span class="read-time">4 min</span>
+                </div>
+                <div class="card-rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-count">(98)</span>
+                </div>
+                <button class="card-btn" onclick="openModal('tre3')">Ler Dica</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO ALIMENTAÇÃO -->
+    <section id="alimentacao" class="section" data-category="alimentacao">
+        <div class="section-header">
+            <span class="icon">🥗</span>
+            <h2>Alimentação</h2>
+            <p>Nutra seu corpo de forma inteligente</p>
+            <a href="alimentacao.html" class="btn-secondary">Ver Todas →</a>
+        </div>
+        <div class="cards-container">
+            <div class="card" data-category="alimentacao" data-id="ali1">
+                <button class="favorite-btn" data-id="ali1">♡</button>
+                <div class="card-badge new">Novo</div>
+                <div class="card-icon">🍎</div>
+                <h3>Déficit Calórico</h3>
+                <p>Como calcular e aplicar para emagrecer de forma saudável.</p>
+                <div class="card-meta">
+                    <span class="difficulty easy">Iniciante</span>
+                    <span class="read-time">5 min</span>
+                </div>
+                <div class="card-rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-count">(256)</span>
+                </div>
+                <button class="card-btn" onclick="openModal('ali1')">Ler Dica</button>
+            </div>
+            
+            <div class="card" data-category="alimentacao" data-id="ali2">
+                <button class="favorite-btn" data-id="ali2">♡</button>
+                <div class="card-icon">🥤</div>
+                <h3>Suplementos Essenciais</h3>
+                <p>Os únicos suplementos que realmente valem a pena.</p>
+                <div class="card-meta">
+                    <span class="difficulty medium">Intermediário</span>
+                    <span class="read-time">7 min</span>
+                </div>
+                <div class="card-rating">
+                    <span class="stars">★★★★☆</span>
+                    <span class="rating-count">(134)</span>
+                </div>
+                <button class="card-btn" onclick="openModal('ali2')">Ler Dica</button>
+            </div>
+            
+            <div class="card" data-category="alimentacao" data-id="ali3">
+                <button class="favorite-btn" data-id="ali3">♡</button>
+                <div class="card-icon">📋</div>
+                <h3>Meal Prep Semanal</h3>
+                <p>Organize suas refeições e economize tempo e dinheiro.</p>
+                <div class="card-meta">
+                    <span class="difficulty easy">Iniciante</span>
+                    <span class="read-time">10 min</span>
+                </div>
+                <div class="card-rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-count">(178)</span>
+                </div>
+                <button class="card-btn" onclick="openModal('ali3')">Ler Dica</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO MODA -->
+    <section id="moda" class="section section-alt" data-category="moda">
+        <div class="section-header">
+            <span class="icon">👔</span>
+            <h2>Moda</h2>
+            <p>Vista-se com estilo e confiança</p>
+            <a href="moda.html" class="btn-secondary">Ver Todas →</a>
+        </div>
+        <div class="cards-container">
+            <div class="card" data-category="moda" data-id="mod1">
+                <button class="favorite-btn" data-id="mod1">♡</button>
+                <div class="card-badge">Popular</div>
+                <div class="card-icon">👕</div>
+                <h3>Guarda-Roupa Cápsula</h3>
+                <p>20 peças essenciais que combinam entre si.</p>
+                <div class="card-meta">
+                    <span class="difficulty easy">Iniciante</span>
+                    <span class="read-time">6 min</span>
+                </div>
+                <div class="card-rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-count">(203)</span>
+                </div>
+                <button class="card-btn" onclick="openModal('mod1')">Ler Dica</button>
+            </div>
+            
+            <div class="card" data-category="moda" data-id="mod2">
+                <button class="favorite-btn" data-id="mod2">♡</button>
+                <div class="card-icon">🎨</div>
+                <h3>Teoria das Cores</h3>
+                <p>Aprenda a combinar cores como um profissional.</p>
+                <div class="card-meta">
+                    <span class="difficulty medium">Intermediário</span>
+                    <span class="read-time">5 min</span>
+                </div>
+                <div class="card-rating">
+                    <span class="stars">★★★★☆</span>
+                    <span class="rating-count">(156)</span>
+                </div>
+                <button class="card-btn" onclick="openModal('mod2')">Ler Dica</button>
+            </div>
+            
+            <div class="card" data-category="moda" data-id="mod3">
+                <button class="favorite-btn" data-id="mod3">♡</button>
+                <div class="card-badge new">Novo</div>
+                <div class="card-icon">✨</div>
+                <h3>Estilo Minimalista</h3>
+                <p>Menos é mais: como adotar o estilo clean.</p>
+                <div class="card-meta">
+                    <span class="difficulty easy">Iniciante</span>
+                    <span class="read-time">4 min</span>
+                </div>
+                <div class="card-rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-count">(189)</span>
+                </div>
+                <button class="card-btn" onclick="openModal('mod3')">Ler Dica</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO FAVORITOS -->
+    <section id="favoritos" class="section">
+        <div class="section-header">
+            <span class="icon">⭐</span>
+            <h2>Seus Favoritos</h2>
+            <p>Dicas salvas para acesso rápido</p>
+        </div>
+        <div class="cards-container" id="favoritesContainer">
+            <div class="empty-state">
+                <span>💫</span>
+                <p>Você ainda não tem favoritos. Clique no ♡ para salvar dicas!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALCULADORAS -->
+    <section class="calculators-section">
+        <div class="section-header">
+            <span class="icon">🧮</span>
+            <h2>Calculadoras</h2>
+            <p>Ferramentas úteis para seu dia a dia</p>
+        </div>
+        <div class="calculators-grid">
+            <div class="calculator-card">
+                <h3>💰 Juros Compostos</h3>
+                <div class="calc-form">
+                    <input type="number" id="valorInicial" placeholder="Valor inicial (R$)">
+                    <input type="number" id="aporteMensal" placeholder="Aporte mensal (R$)">
+                    <input type="number" id="taxaJuros" placeholder="Taxa de juros (% ao ano)">
+                    <input type="number" id="periodo" placeholder="Período (anos)">
+                    <button onclick="calcularJuros()">Calcular</button>
+                    <div class="calc-result" id="resultJuros"></div>
+                </div>
+            </div>
+            
+            <div class="calculator-card">
+                <h3>🏋️ IMC</h3>
+                <div class="calc-form">
+                    <input type="number" id="peso" placeholder="Peso (kg)">
+                    <input type="number" id="altura" placeholder="Altura (cm)">
+                    <button onclick="calcularIMC()">Calcular</button>
+                    <div class="calc-result" id="resultIMC"></div>
+                </div>
+            </div>
+            
+            <div class="calculator-card">
+                <h3>🍎 Calorias Diárias</h3>
+                <div class="calc-form">
+                    <input type="number" id="idadeCal" placeholder="Idade">
+                    <select id="sexoCal">
+                        <option value="">Selecione o sexo</option>
+                        <option value="m">Masculino</option>
+                        <option value="f">Feminino</option>
+                    </select>
+                    <input type="number" id="pesoCal" placeholder="Peso (kg)">
+                    <input type="number" id="alturaCal" placeholder="Altura (cm)">
+                    <select id="atividadeCal">
+                        <option value="1.2">Sedentário</option>
+                        <option value="1.375">Leve (1-3x/semana)</option>
+                        <option value="1.55">Moderado (3-5x/semana)</option>
+                        <option value="1.725">Intenso (6-7x/semana)</option>
+                    </select>
+                    <button onclick="calcularCalorias()">Calcular</button>
+                    <div class="calc-result" id="resultCalorias"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+        <h2>📬 Receba Dicas Exclusivas</h2>
+        <p>Cadastre-se e receba conteúdo semanal gratuito</p>
+        <form class="newsletter-form" id="newsletterForm">
+            <input type="text" id="userName" placeholder="Seu nome" required>
+            <input type="email" id="userEmail" placeholder="Seu melhor e-mail" required>
+            <button type="submit">Inscrever-se</button>
+        </form>
+        <div class="newsletter-success" id="newsletterSuccess">
+            ✅ Inscrição realizada com sucesso!
+        </div>
+    </section>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <div class="modal-content" id="modalContent">
+                <!-- Conteúdo dinâmico -->
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTÃO VOLTAR AO TOPO -->
+    <button class="back-to-top" id="backToTop">↑</button>
+
+    <!-- NOTIFICAÇÃO TOAST -->
+    <div class="toast" id="toast">
+        <span id="toastMessage"></span>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Life<span>Up</span></h3>
+                <p>Sua plataforma completa para uma vida mais inteligente e equilibrada.</p>
+                <div class="social-links">
+                    <a href="#">📸</a>
+                    <a href="#">▶️</a>
+                    <a href="#">🎵</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Categorias</h4>
+                <a href="investimentos.html">Investimentos</a>
+                <a href="treino.html">Treino</a>
+                <a href="alimentacao.html">Alimentação</a>
+                <a href="moda.html">Moda</a>
+            </div>
+            <div class="footer-section">
+                <h4>Recursos</h4>
+                <a href="#">Calculadoras</a>
+                <a href="#">E-books</a>
+                <a href="#">Comunidade</a>
+                <a href="#">Contato</a>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <a href="#">Termos de Uso</a>
+                <a href="#">Privacidade</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 LifeUp - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
